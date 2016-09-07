@@ -30,3 +30,13 @@ def record_vars(context, data):
 
     #Plot the counts
     record(num_long = long_count, num_short = short_count)
+
+""" Lesson 9 - Slippage and commission
+simulation estimates the impact of orders on the fill rate and execution
+price.  buy orders drive price up and sell order down  price_impact of the trade
+volume_limit determines the fraction of a security's trading volume that can be
+used by your algo"""
+
+set_slippage(slippage.VolumeSharesSlippage(volume_limit = 0.025, price_impact = 0.1))
+
+set_commission (commission.PerShare(cost = 0.0075, min_trade_cost = 1))
